@@ -1,13 +1,12 @@
+"use client"
 import React, { useState } from "react";
-import { Stage, Container, Sprite, useTick } from "@inlet/react-pixi";
-import { settings, SCALE_MODES } from "pixi.js";
-
-settings.SCALE_MODE = SCALE_MODES.NEAREST;
+import { Stage, Container, Sprite, useTick } from "@pixi/react";
+import { Application } from "pixi.js";
 
 const RotatingBunny = () => {
   const [rotation, setRotation] = useState(0);
 
-  useTick((delta) => delta && setRotation(rotation + 0.1 * delta));
+  useTick((delta) => delta && setRotation(rotation + 0.05 * delta));
 
   return (
     <Sprite
